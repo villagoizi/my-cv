@@ -1,0 +1,272 @@
+:root{
+    --ghost: #E9ECF5;
+    --magenta: #993955;
+    --cerulean: #A3C3D9;
+    --light: #CCD6EB;
+    --purple: #AE76A6;
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray: #585858;
+}
+*,*::after, *::before{
+    margin:0;
+    padding:0;
+}
+ul,li{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+body{
+   
+    font-size: 10px;
+    background-color: var(--cerulean);
+    font-family: 'Roboto', sans-serif;
+}
+.divisor{
+    width: 30%;
+    height: 1px;
+    margin: 20px auto;
+    background: var(--white);
+    border-radius: 30px; 
+}
+
+/*PORTFOLIO*/
+
+.grid-container{
+    width: 100vw;
+    height:100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 24.7vh 5fr;
+    grid-template-areas: 
+    "profile-img name-profile"
+    "data-profile exp-laboral";
+}
+.h-100{
+    height: 100%;
+}
+@media screen and (max-width: 576px){
+    .grid-container{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       height: 100%;
+       width: 100%;
+    }
+    .profile-img{
+        width: 100%;
+        height:160px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .img-box{
+        width: 140px !important;
+        height: 140px !important;
+        margin:20px auto!important;   
+    }
+    
+}
+
+/*PROFILE*/
+.profile-img{
+    grid-area: profile-img;
+    display:flex;
+    justify-content: center;
+    background: var(--cerulean);
+}
+.img-box{
+    width: 140px;
+    height: 140px;
+    margin:auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 2px 2px 20px 1px var(--light);
+}
+.img-box img{
+    width: 100%;
+    height: 100%;
+}
+/*NAME PROFILE*/
+.name-profile{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    grid-area: name-profile;
+    background: var(--cerulean)  ;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ghost);
+}
+.name-profile h4,
+.name-profile h3{
+    font-size:5em;
+    margin-left: 40px;
+}
+
+@media screen and (max-width: 768px){
+    .name-profile h4, .name-profile h3{
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 3em;
+        color: var(--ghost);
+    }
+}
+
+/*DATA PROFILE*/
+.data-profile{
+    width:100%;
+    grid-area: data-profile;
+    text-align: center;
+    background-color: var(--magenta);
+}
+.data-profile h3{
+    font-weight: 500;
+    padding-top:10px;
+    font-size: 2em;
+    color: var(--ghost)
+}
+.presentation{
+    margin-top:20px;
+    width: 100%;
+    color: var(--light);
+    font-size: 1.5em;
+    font-weight: 100;
+}
+.presentation p{
+    padding:0 15px;
+}
+
+.data-information{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start ;
+    margin:20px auto;
+    width: 90%;
+    background-color: var(--white);
+    padding: 1em;
+    line-height: 26px;
+    border-radius:10px;
+}
+.data-information span,
+.data-information a{
+    color: var(--magenta);
+    font-size: 1.5em;
+}
+
+.data-information i {
+    color: var(--purple);
+    font-size: 1.5em;
+    padding-right: 1em;
+}
+@media screen and (max-width: 576px){
+    .data-profile{
+        border-radius: 20px 20px 0 0;
+    }
+}
+.tecnologies{
+    background-color: var(--purple);
+}
+.tecnologies h3{
+    padding-top: 20px;
+    color:var(--white);
+    text-align:center;
+    font-size: 2em; 
+}
+.programation{
+    display:flex;
+    flex-wrap: wrap;
+}
+.programation__items{
+    margin:20px auto;
+    height:20px;
+    width: 20px;
+    padding: 1.5em;
+    background: white;
+    color: var(--magenta);
+    line-height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px .3em, inset -1px -1px 1px 1px var(--light), inset 3px 3px 1px .3em var(--ghost);
+}
+.programation__items span,
+.programation__items:last-child,
+.programation__items p{   
+    display:none;
+}
+.programation__items i{
+    font-size: 2.3em;
+}
+@media screen and (max-width: 576px){
+    .programation__items{
+        height:70px;
+        width: 90px; 
+        line-height: 20px;
+        border-radius: 20px;
+    }
+    .programation__items span,
+    .programation__items:last-child,
+    .programation__items p{   
+    display:block;
+}
+}
+
+/*EXP LABORAL Y OTHERS KNOWDLEGE*/
+.exp-laboral{
+    grid-area: exp-laboral;
+    background: var(--ghost);
+}
+.studies{
+    padding-bottom:15px;
+}
+.studies h3{
+    color: var(--black);
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+.education{
+    display:flex;
+    background-color: var(--white);
+    border-radius: 20px;
+    margin: 0 15px;
+}
+.year-city{
+    padding:20px;
+    text-align:center;
+}
+.title-model{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.title-model h3{
+    padding: 10px 0;
+    margin:0;
+    text-align:start;
+}
+.education p{
+    font-size: 1.3em;
+    color: var(--gray);
+    padding: 10px 0;
+}
+@media screen and (max-width:992px ){
+    .education{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .education p{
+        padding: 10px;
+    }
+    .title-model h3{
+        padding: 10px;
+        text-align:center;
+    }
+}
